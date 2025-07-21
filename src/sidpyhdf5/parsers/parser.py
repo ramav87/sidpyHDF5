@@ -20,7 +20,6 @@ from nomad.datamodel.metainfo.workflow import Workflow
 from nomad.parsing.file_parser import Quantity, TextParser
 from nomad.units import ureg as units
 from nomad.datamodel import EntryArchive
-from .metainfo.example import HDF5Metadata
 from .hdf5_parser import HDF5Reader
 from nomad.datamodel import EntryArchive, EntryMetadata
 
