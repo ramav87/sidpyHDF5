@@ -45,8 +45,8 @@ class HDF5Parser():
     def parse(self, mainfile: str, archive: EntryArchive, logger):
         print('We are inside parse()')
         logger.info(f"🔥 HDF5Parser invoked on file: {mainfile}")
-        from .hdf5_parser import HDF5Reader
-        from .metainfo.example import HDF5Metadata
+        from sidpyhdf5.parsers.hdf5_parser import HDF5Reader
+        from sidpyhdf5.schema_packages.schema_package import HDF5Metadata
 
         reader = HDF5Reader(mainfile)
         data = reader.extract_metadata()
@@ -63,7 +63,7 @@ class HDF5Parser():
             archive.metadata = EntryMetadata()
 
         archive.metadata.entry_name = 'HDF5 extracted entry'
-        archive.results = section
+        archive.data = section
         logger.info(f"Successfully completed")
         
 
