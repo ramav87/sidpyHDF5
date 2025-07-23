@@ -20,6 +20,7 @@ from nomad.datamodel.metainfo.workflow import Workflow
 from nomad.parsing.file_parser import Quantity, TextParser
 from nomad.units import ureg as units
 from nomad.datamodel import EntryArchive
+from nomad.parsing.parser import MatchingParser
 from .hdf5_parser import HDF5Reader
 from nomad.datamodel import EntryArchive, EntryMetadata
 
@@ -40,7 +41,7 @@ class NewParser(MatchingParser):
 
         archive.workflow2 = Workflow(name='test')"""
 
-class HDF5Parser():
+class HDF5Parser(MatchingParser):
     def parse(self, mainfile: str, archive: EntryArchive, logger):
         print('We are inside parse()')
         logger.info(f"🔥 HDF5Parser invoked on file: {mainfile}")
