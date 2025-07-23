@@ -6,9 +6,9 @@ class NewParserEntryPoint(ParserEntryPoint):
     parameter: int = Field(0, description='Custom configuration parameter')
 
     def load(self):
-        from sidpyhdf5.parsers.parser import NewParser
+        from sidpyhdf5.parsers.parser import HDF5Parser
 
-        return NewParser(**self.model_dump())
+        return HDF5Parser(**self.model_dump())
 
 
 parser_entry_point = NewParserEntryPoint(
