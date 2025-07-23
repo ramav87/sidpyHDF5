@@ -42,13 +42,14 @@ class NewParser(MatchingParser):
         archive.workflow2 = Workflow(name='test')"""
 
 class HDF5Parser():
-     def __init__(self, source=None, metadata=None, **kwargs):
+    def __init__(self, source=None, metadata=None, **kwargs):
         """
         source: path or handle for the HDF5 file
         metadata: RAW metadata dict if provided
         """
         self.source = source
         self.metadata = metadata or {}
+
 
     def parse(self, mainfile: str, archive: EntryArchive, logger):
         print('We are inside parse()')
