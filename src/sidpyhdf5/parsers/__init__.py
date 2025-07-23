@@ -5,10 +5,10 @@ from pydantic import Field
 class NewParserEntryPoint(ParserEntryPoint):
     parameter: int = Field(0, description='Custom configuration parameter')
 
-    def load(self):
+    def load(self, **kwargs):
         from sidpyhdf5.parsers.parser import HDF5Parser
 
-        return HDF5Parser()
+        return HDF5Parser(**kwargs)
 
 
 parser_entry_point = NewParserEntryPoint(
