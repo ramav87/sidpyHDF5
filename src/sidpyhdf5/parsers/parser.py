@@ -41,7 +41,7 @@ class NewParser(MatchingParser):
 
         archive.workflow2 = Workflow(name='test')"""
 
-class HDF5Parser(MatchingParser):
+class HDF5Parser():
     def parse(self, mainfile: str, archive: EntryArchive, logger):
         print('We are inside parse()')
         logger.info(f"🔥 HDF5Parser invoked on file: {mainfile}")

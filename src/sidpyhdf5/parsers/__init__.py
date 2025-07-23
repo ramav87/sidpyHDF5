@@ -8,7 +8,7 @@ class NewParserEntryPoint(ParserEntryPoint):
     def load(self):
         from sidpyhdf5.parsers.parser import HDF5Parser
 
-        return HDF5Parser(**self.model_dump())
+        return HDF5Parser()
 
 
 parser_entry_point = NewParserEntryPoint(
